@@ -422,6 +422,10 @@
     [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
+- (void) activateApp:(CDVInvokedUrlCommand *)command {
+    [FBSDKAppEvents activateApp];
+}
+
 #pragma mark - Utility methods
 
 - (void) loginWithPermissions:(NSArray *)permissions withHandler:(void(^)(FBSDKLoginManagerLoginResult *result, NSError *error))handler {
